@@ -7,7 +7,8 @@ The **Malware Deconstructor AI Agent (MDAA)** is a powerful browser extension de
 > **Goal:** Function as an intelligent colleague to augment user capabilities, not replace them.
 
 ---
-
+## ⚙️ Checksum & Security
+* **extension.zip** : sha256:072f791feb8670aabbd1443f8ef6bcb10ca9935cb606acfafe6f2f0a6e608669
 ## ✨ Features
 
 * **AI Chat Interface:** Interact with the **Gemini 2.5 Flash** model, pre-configured with the **Malware Deconstructor AI Agent** persona for technical, precise, and collaborative security analysis.
