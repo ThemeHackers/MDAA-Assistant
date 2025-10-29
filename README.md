@@ -22,7 +22,7 @@ The **Malware Deconstructor AI Agent (MDAA)** is a powerful browser extension de
 * **Secure Key Management:** All API keys are **encrypted** using **AES-GCM (256-bit)** and a password-derived key (via **PBKDF2 SHA-256 with 250,000 iterations**) and stored in Chrome's local storage.
     * Keys are decrypted only **in-memory** per session.
 * **Chat History:** Option to save chat history persistently in local storage or session-only (default).
-
+* **Lockdown when password is wrong:** When the user enters the wrong password, there is a security protection system.
 ---
 
 ## ⚙️ Dependencies & API Keys
