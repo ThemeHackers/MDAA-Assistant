@@ -1,0 +1,84 @@
+#mdaa-sync-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9998;
+    display: none;
+    font-family: "Inter", sans-serif;
+}
+#mdaa-sync-modal {
+    position: fixed; top: 40%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1f2937;
+    color: #d1d5db;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    padding: 24px;
+    width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+}
+#mdaa-sync-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #67e8f9;
+    margin: 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #374151;
+}
+#mdaa-sync-message {
+    font-size: 0.875rem;
+    color: #9ca3af;
+    margin: 0;
+    line-height: 1.4;
+}
+#mdaa-sync-input {
+    width: 100%;
+    background-color: #374151;
+    border: 1px solid #374151;
+    color: #d1d5db;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 0.875rem;
+    box-sizing: border-box;
+}
+#mdaa-sync-input:focus {
+    outline: none;
+    border-color: #22d3ee;
+}
+#mdaa-sync-status {
+    font-size: 0.875rem;
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+}
+.mdaa-status-error { color: #ef4444; }
+.mdaa-status-success { color: #22c55e; }
+
+#mdaa-sync-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+.mdaa-sync-btn {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+}
+#mdaa-sync-ok-btn {
+    background-color: #22d3ee;
+    color: #111827;
+}
+#mdaa-sync-ok-btn:hover { background-color: #67e8f9; }
+#mdaa-sync-cancel-btn {
+    background-color: #374151;
+    color: #d1d5db;
+}
+#mdaa-sync-cancel-btn:hover { background-color: #4b5563; }

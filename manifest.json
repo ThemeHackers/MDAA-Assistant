@@ -1,0 +1,56 @@
+{
+  "manifest_version": 3,
+  "name": "MDAA - AI Security Assistant",
+  "version": "1.0.0",
+  "description": "Analyze IoCs and security content directly from your browser.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "contextMenus",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/",
+    "https://www.virustotal.com/",
+    "https://api.abuseipdb.com/",
+    "https://dashsecurity.netlify.app/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/favicon.png",
+      "32": "icons/favicon.png",
+      "48": "icons/favicon.png"
+    }
+  },
+  "icons": {
+    "16": "icons/favicon.png",
+    "32": "icons/favicon.png",
+    "48": "icons/favicon.png",
+    "128": "icons/favicon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+
+  "externally_connectable": {
+    "matches": [
+      "https://dashsecurity.netlify.app/*"
+    ]
+  },
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "mdaaspec.json",
+        "lib/crypto.global.js",
+        "lib/crypto.content.js",
+        "lib/modal.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

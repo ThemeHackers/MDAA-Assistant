@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MDAA</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="popup-body">
+    <div id="locked-view" class="container">
+        <div class="header">
+            <img src="icons/favicon.png" alt="MDAA Logo" class="logo">
+            <h1>Unlock Session</h1>
+        </div>
+        <div class="content-card">
+            <div class="form-grid">
+                <div>
+                    <label for="session-password-input">Encryption Password</label>
+                    <input type="password" id="session-password-input" placeholder="Your encryption password">
+                </div>
+            </div>
+            <div class="button-group">
+                <button id="unlock-session-btn">Unlock</button>
+            </div>
+            <p id="unlock-status-message"></p>
+            <a href="#" id="go-to-options" class="options-link">No keys set? Go to Options</a>
+        </div>
+    </div>
+
+    <div id="unlocked-view" class="container hidden">
+        <div class="header">
+            <img src="icons/favicon.png" alt="MDAA Logo" class="logo">
+            <h1>MDAA Assistant v1.0.0</h1>
+            <button id="remove-session-keys-btn" class="session-control-btn" title="Remove keys from memory">&times; Clear Keys</button>
+        </div>
+        
+        <div class="tab-nav">
+            <button class="tab-link active" data-tab="tab-chat">AI Chat</button>
+            <button class="tab-link" data-tab="tab-quick-check">Quick Check</button>
+            <button class="tab-link" data-tab="tab-page-analysis">Page</button>
+        </div>
+
+        <div id="tab-chat" class="tab-content active">
+            
+            <div id="chat-controls">
+                <button id="new-chat-btn" class="chat-control-btn">New Chat</button>
+                <button id="history-chat-btn" class="chat-control-btn">History</button>
+            </div>
+
+            <div id="chat-view">
+                <div id="chat-container">
+                </div>
+                <div id="chat-input-area">
+                    <textarea id="chat-input" placeholder="Ask about analysis..." rows="2"></textarea>
+                    <button id="send-chat-btn">Send</button>
+                </div>
+            </div>
+
+            <div id="history-view" class="hidden">
+                <div id="history-header">
+                    <button id="back-to-chat-btn" class="chat-control-btn">&larr; Back to Chat</button>
+                </div>
+                <div id="history-list-container">
+                    </div>
+            </div>
+
+        </div>
+
+        <div id="tab-quick-check" class="tab-content hidden">
+            <div class="form-grid">
+                <div>
+                    <label for="ioc-input">IoCs (IP, Domain, Hash, URL)</label>
+                    <textarea id="ioc-input" placeholder="Paste IoCs here (one per line)..." rows="4"></textarea>
+                </div>
+            </div>
+            <div class="button-group">
+                <button id="smart-check-btn">Analyze IoCs</button>
+            </div>
+            <div id="quick-check-results">
+            </div>
+            <div class="button-group hidden" id="qc-ai-analyze-group">
+                <button id="qc-ai-analyze-btn">Summarize Results with AI</button>
+            </div>
+        </div>
+
+        <div id="tab-page-analysis" class="tab-content hidden">
+            <div class="content-card text-center">
+                <p class="card-description">Ready to analyze the current page or selection.</p>
+                <div class="button-group">
+                    <button id="summarize-page-btn">Summarize Page / Selection</button>
+                    <button id="extract-iocs-btn">Extract IoCs from Page / Selection</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="lib/crypto.js"></script>
+    <script type="module" src="lib/api.js"></script>
+    <script type="module" src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MDAA Options</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="options-page">
+    <div class="container">
+        <div class="header">
+            <h1>MDAA Options & Security</h1>
+        </div>
+
+        <div id="sync-section" class="content-card">
+            <h3 class="card-title">Sync from Web App</h3>
+            <p class="card-description">
+                Click this button to open the MDAA web app for secure key transfer. This will overwrite any manually saved keys.
+            </p>
+             <div class="button-group">
+                <button id="sync-from-web-btn">Start Sync from Web App</button>
+            </div>
+        </div>
+
+        <div id="manual-key-section" class="content-card">
+            <h3 class="card-title">Manual Key Setup & Security</h3>
+            <p class="card-description">
+                Alternatively, enter your API Keys manually and encrypt them with a strong password. This is required if the Sync feature is unavailable.
+            </p>
+             <div class="form-grid api-key-grid">
+                <!-- Gemini Key -->
+                <div class="key-input-group">
+                    <label for="gemini-key-input">Gemini API Key</label>
+                    <input type="password" id="gemini-key-input" placeholder="GEMINI_API_KEY">
+                    <p id="gemini-key-status" class="key-status"></p>
+                </div>
+                <!-- VirusTotal Key -->
+                <div class="key-input-group">
+                    <label for="vt-key-input">VirusTotal API Key</label>
+                    <input type="password" id="vt-key-input" placeholder="VT_API_KEY">
+                    <p id="vt-key-status" class="key-status"></p>
+                </div>
+                <!-- AbuseIPDB Key -->
+                <div class="key-input-group">
+                    <label for="abuse-key-input">AbuseIPDB API Key</label>
+                    <input type="password" id="abuse-key-input" placeholder="ABUSEIPDB_API_KEY">
+                    <p id="abuse-key-status" class="key-status"></p>
+                </div>
+                <!-- Shodan Key -->
+                 <div class="key-input-group">
+                    <label for="shodan-key-input">Shodan API Key (Optional)</label>
+                    <input type="password" id="shodan-key-input" placeholder="SHODAN_API_KEY">
+                    <p id="shodan-key-status" class="key-status"></p>
+                </div>
+
+                <!-- Password for Encryption -->
+                <div style="grid-column: 1 / -1;">
+                    <label for="encryption-password-input">Encryption Password (12+ chars)</label>
+                    <input type="password" id="encryption-password-input" placeholder="Password to encrypt and secure keys">
+                    <div id="password-strength-container-options">
+                        <div id="password-strength-bar-options"><div id="password-strength-progress-options"></div></div>
+                        <p id="password-strength-text-options"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="button-group-horizontal">
+                <button id="encrypt-and-save-btn">Encrypt & Save Keys</button>
+                <button id="unsync-keys-btn" class="secondary-btn">Unsync Keys</button>
+            </div>
+            <p id="manual-status"></p>
+        </div>
+
+        <div id="settings-section" class="content-card">
+            <h3 class="card-title">Extension Settings</h3>
+             <div class="form-grid">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="save-chat-history-checkbox">
+                    Save Chat History (Reloads extension)
+                </label>
+             </div>
+        </div>
+
+         <p id="general-status"></p>
+    </div>
+    <script type="module" src="lib/crypto.js"></script>
+    <script type="module" src="options.js"></script>
+</body>
+</html>
